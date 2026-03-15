@@ -1,5 +1,3 @@
-# Portfolio
-Mon portfolio pro
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +6,17 @@ Mon portfolio pro
 <title>Abner — Développeur Web Professionnel au Niger</title>
 <meta name="description" content="Abner, développeur web professionnel au Niger. Création de sites vitrines, e-commerce et applications web. Clients locaux et internationaux.">
 <meta name="keywords" content="développeur web Niger, création site web Niamey, site web professionnel Niger, développeur web Afrique">
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Abner — Développeur Web Professionnel au Niger">
+<meta property="og:description" content="Création de sites vitrines, e-commerce et maintenance — clients locaux & internationaux.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://i.imgur.com/XzdyshT.png">
+<meta name="twitter:image" content="https://i.imgur.com/XzdyshT.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abner — Développeur Web Professionnel au Niger">
+<meta name="twitter:description" content="Création de sites vitrines, e-commerce et maintenance — clients locaux & internationaux.">
 <style>
 /* ===================== RESET ===================== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -521,6 +530,13 @@ footer{
 </head>
 <body>
 
+<noscript>
+  <style>.pg{display:block!important}nav{position:static}</style>
+  <div style="padding:.8rem 1.5rem;background:#1a1f2e;color:#e2e8f0;text-align:center;font-size:.85rem;border-bottom:1px solid #1e2736;">
+    ⚠️ JavaScript est désactivé — la navigation et les formulaires peuvent ne pas fonctionner correctement.
+  </div>
+</noscript>
+
 <!-- =================== NAV =================== -->
 <nav id="nav">
   <div class="nav-logo">
@@ -584,7 +600,7 @@ footer{
         <div class="proj-img t1">🍽️</div>
         <div class="proj-body">
           <div class="proj-tags"><span class="ptag">Site vitrine</span><span class="ptag b">SEO</span></div>
-          <h3>Restaurant Le Sahel — Niamey</h3>
+          <h3>Sahel Lounge — Niamey</h3>
           <p>Site vitrine avec menu en ligne, galerie et formulaire de réservation. +60% de réservations en 3 mois.</p>
           <span class="proj-link">Voir le projet →</span>
         </div>
@@ -636,7 +652,7 @@ footer{
         <div class="test-card">
           <div class="stars">★★★★★</div>
           <p>Abner a compris exactement ce dont j'avais besoin. Un site qui dépasse mes attentes. Mes clients adorent le design !</p>
-          <div class="test-auth"><div class="auth-av">MA</div><div class="auth-name"><strong>Moussa Abdou</strong><span>Restaurant Le Sahel</span></div></div>
+          <div class="test-auth"><div class="auth-av">MA</div><div class="auth-name"><strong>Moussa Abdou</strong><span>Sahel Lounge</span></div></div>
         </div>
         <div class="test-card">
           <div class="stars">★★★★★</div>
@@ -1003,7 +1019,7 @@ footer{
       <div class="q-section">
         <div class="q-stitle"><span class="q-num">1</span>Informations générales</div>
         <div class="q-fields">
-          <div class="fg"><label>1. Nom de votre entreprise ou projet *</label><input type="text" name="q1" placeholder="Ex: Restaurant Le Sahel" required></div>
+          <div class="fg"><label>1. Nom de votre entreprise ou projet *</label><input type="text" name="q1" placeholder="Ex: Sahel Lounge" required></div>
           <div class="fg"><label>2. Activité principale *</label><input type="text" name="q2" placeholder="Ex: Restaurant, boutique, cabinet de conseil..." required></div>
           <div class="fg"><label>3. Qui sont vos clients cibles ?</label><input type="text" name="q3" placeholder="Ex: Professionnels 25-45 ans à Niamey..."></div>
           <div class="fg"><label>4. Principaux concurrents ?</label><input type="text" name="q4" placeholder="Ex: noms de concurrents ou sites similaires"></div>
@@ -1333,6 +1349,17 @@ function sendQuestionnaire(e) {
     btn.textContent = '✓ Questionnaire envoyé !';
   }, 600);
 }
+
+// Accessibilité clavier — active Enter/Space sur tous les éléments onclick
+document.querySelectorAll('[onclick]').forEach(function(el){
+  if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');
+  el.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      el.click();
+    }
+  });
+});
 </script>
 </body>
 </html>
